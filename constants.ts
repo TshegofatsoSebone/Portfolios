@@ -1,0 +1,271 @@
+import { Project, Skill, Experience, Education, SocialLink, Certificate } from './types';
+
+export const PORTFOLIO_DATA = {
+  name: "Tshegofatso Sebone",
+  title: "Software Developer | AI/ML Enthusiast",
+  tagline: "Bridging the gap between complex algorithms and intuitive user experiences.",
+  bio: "Software Developer with strong foundations in Java, Kotlin, C#, and full-stack web development, now expanding expertise into Artificial Intelligence and Machine Learning. Completed comprehensive AI/ML certification series on Coursera (IBM, Google, Intel, DeepLearning.AI, Microsoft) covering Generative AI, LLMs, Responsible AI, Prompt Engineering, and cloud AI implementations. Currently interning at Capaciti with hands-on AI project exposure. Seeking roles that leverage both software engineering rigor and applied AI/ML to build intelligent, scalable solutions.",
+  location: "Johannesburg, SA",
+  email: "paledisebene@gmail.com",
+  profileImage: "./profile.jpg"
+};
+
+export const SKILLS: Skill[] = [
+  // Languages
+  { name: "TypeScript", level: 95, category: "Languages", icon: "devicon-typescript-plain colored" },
+  { name: "Python", level: 90, category: "Languages", icon: "devicon-python-plain colored" },
+  { name: "Java", level: 85, category: "Languages", icon: "devicon-java-plain colored" },
+  { name: "C#", level: 80, category: "Languages", icon: "devicon-csharp-plain colored" },
+  { name: "JavaScript", level: 95, category: "Languages", icon: "devicon-javascript-plain colored" },
+  { name: "Kotlin", level: 75, category: "Languages", icon: "devicon-kotlin-plain colored" },
+  { name: "PHP", level: 70, category: "Languages", icon: "devicon-php-plain colored" },
+
+  // Frontend
+  { name: "React", level: 95, category: "Frontend", icon: "devicon-react-original colored" },
+  { name: "Vue.js", level: 80, category: "Frontend", icon: "devicon-vuejs-plain colored" },
+  { name: "HTML5", level: 100, category: "Frontend", icon: "devicon-html5-plain colored" },
+  { name: "CSS3", level: 95, category: "Frontend", icon: "devicon-css3-plain colored" },
+  { name: "Bootstrap", level: 85, category: "Frontend", icon: "devicon-bootstrap-plain colored" },
+  { name: "Vite", level: 90, category: "Frontend", icon: "devicon-vitejs-plain colored" },
+
+  // Backend & DB
+  { name: "Node.js", level: 90, category: "Backend & DB", icon: "devicon-nodejs-plain-wordmark colored" },
+  { name: "PostgreSQL", level: 85, category: "Backend & DB", icon: "devicon-postgresql-plain colored" },
+  { name: "MySQL", level: 85, category: "Backend & DB", icon: "devicon-mysql-plain colored" },
+  { name: "Oracle", level: 75, category: "Backend & DB", icon: "devicon-oracle-original colored" },
+  { name: "Firebase", level: 85, category: "Backend & DB", icon: "devicon-firebase-plain colored" },
+
+  // Cloud & Platforms
+  { name: "AWS", level: 80, category: "Cloud & Platforms", icon: "devicon-amazonwebservices-plain-wordmark colored" },
+  { name: "Azure", level: 75, category: "Cloud & Platforms", icon: "devicon-azure-plain colored" },
+  { name: ".NET", level: 80, category: "Cloud & Platforms", icon: "devicon-dotnetcore-plain colored" },
+  { name: "GitHub", level: 90, category: "Cloud & Platforms", icon: "devicon-github-original" },
+  { name: "GitLab", level: 85, category: "Cloud & Platforms", icon: "devicon-gitlab-plain colored" },
+  { name: "Firebase", level: 85, category: "Cloud & Platforms", icon: "devicon-firebase-plain colored" },
+
+  // AI/ML
+  { name: "TensorFlow", level: 80, category: "AI/ML", icon: "devicon-tensorflow-original colored" },
+  { name: "Gemini API", level: 90, category: "AI/ML", icon: "custom-gemini" },
+  { name: "PyTorch", level: 85, category: "AI/ML", icon: "devicon-pytorch-original colored" },
+  { name: "Hugging Face", level: 80, category: "AI/ML", icon: "custom-huggingface" },
+
+  // Tools
+  { name: "Git", level: 95, category: "Tools", icon: "devicon-git-plain colored" },
+  { name: "VS Code", level: 95, category: "Tools", icon: "devicon-vscode-plain colored" },
+  { name: "Figma", level: 80, category: "Tools", icon: "devicon-figma-plain colored" },
+  { name: "Jupyter", level: 85, category: "Tools", icon: "devicon-jupyter-plain colored" },
+  { name: "Canva", level: 75, category: "Tools", icon: "devicon-canva-original colored" },
+];
+
+export const EXPERIENCE: Experience[] = [
+  {
+    role: "Software Developer Intern",
+    company: "Capaciti",
+    location: "Johannesburg, SA",
+    period: "Oct 2025 - Present",
+    description: [
+      "Developing and implementing AI-enhanced features in existing software solutions",
+      "Collaborating with teams to integrate Generative AI capabilities into business applications",
+      "Participating in AI ethics reviews and responsible AI implementation discussions",
+      "Gaining hands-on experience with production-level AI/ML workflows"
+    ]
+  }
+];
+
+export const EDUCATION: Education[] = [
+  // Formal Education
+  {
+    institution: "IIE Rosebank College",
+    qualification: "Diploma in Software Development",
+    period: "Completed 2025",
+    type: "college",
+    category: "formal"
+  },
+  {
+    institution: "Randfontein High School",
+    qualification: "Matric (High School Diploma)",
+    period: "Jan 2017 - Dec 2021",
+    type: "school",
+    category: "formal"
+  },
+  // Additional Learning
+  {
+    institution: "Capaciti AI Internship Program",
+    qualification: "Internship",
+    period: "Current",
+    type: "internship",
+    category: "additional"
+  }
+];
+
+export const CERTIFICATIONS: Certificate[] = [
+  // Group 1: Generative AI & Advanced AI
+  {
+    id: "gen-ai-llm",
+    title: "Generative AI with Large Language Models",
+    issuer: "DeepLearning.AI",
+    date: "Oct 2024",
+    category: "Generative AI"
+  },
+  {
+    id: "gen-ai-everyone",
+    title: "Generative AI for Everyone",
+    issuer: "AWS & DeepLearning.AI",
+    date: "Oct 2024",
+    category: "Generative AI"
+  },
+  {
+    id: "intro-gen-ai",
+    title: "Introduction to Generative AI",
+    issuer: "Google Cloud",
+    date: "Oct 2024",
+    category: "Generative AI"
+  },
+
+  // Group 2: AI Foundations & Specializations
+  {
+    id: "ai-prompt-eng",
+    title: "AI Foundations: Prompt Engineering with ChatGPT",
+    issuer: "Arizona State University",
+    date: "Oct 2024",
+    category: "Foundations"
+  },
+  {
+    id: "intro-ai-ibm",
+    title: "Introduction to Artificial Intelligence (AI)",
+    issuer: "IBM",
+    date: "Oct 2024",
+    category: "Foundations"
+  },
+  {
+    id: "ai-essentials-v2",
+    title: "Artificial Intelligence Essentials V2",
+    issuer: "IBM",
+    date: "Oct 2024",
+    category: "Foundations"
+  },
+  {
+    id: "ai-essentials-intel",
+    title: "AI Essentials",
+    issuer: "Intel",
+    date: "Oct 2024",
+    category: "Foundations"
+  },
+  {
+    id: "ai-everyone-dl",
+    title: "AI for Everyone",
+    issuer: "DeepLearning.AI",
+    date: "Oct 2024",
+    category: "Foundations"
+  },
+  {
+    id: "ai-azure",
+    title: "Artificial Intelligence on Microsoft Azure",
+    issuer: "Microsoft",
+    date: "Oct 2024",
+    category: "Foundations"
+  },
+
+  // Group 3: Responsible & Ethical AI
+  {
+    id: "trustworthy-ai",
+    title: "Trustworthy AI: Managing Bias, Ethics, and Accountability",
+    issuer: "Johns Hopkins University",
+    date: "Oct 2024",
+    category: "Ethics"
+  },
+  {
+    id: "intro-responsible-ai",
+    title: "Introduction to Responsible AI",
+    issuer: "Google",
+    date: "Oct 2024",
+    category: "Ethics"
+  },
+
+  // Group 4: Development & Implementation
+  {
+    id: "ai-chatbots",
+    title: "Building AI-Powered Chatbots Without Programming",
+    issuer: "IBM",
+    date: "Oct 2024",
+    category: "Development"
+  },
+  {
+    id: "python-ds-ai",
+    title: "Python for Data Science and AI",
+    issuer: "IBM",
+    date: "Oct 2024",
+    category: "Development"
+  },
+  {
+    id: "python-dev-ai",
+    title: "Python for Data Science, AI & Development",
+    issuer: "IBM",
+    date: "Oct 2024",
+    category: "Development"
+  }
+];
+
+export const PROJECTS: Project[] = [
+  {
+    id: "mzansi-market",
+    title: "Mzansi Market AI",
+    description: "AI-driven marketplace supporting South African artisans and local businesses. Integrates AI technologies to address market access, trust issues, and accessibility challenges for users with disabilities.",
+    techStack: ["React", "Next.js", "AI Integration", "Tailwind"],
+    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=800",
+    demoUrl: "https://mzansimarket.vercel.app/",
+    repoUrl: "https://github.com/TshegofatsoSebone/Mzansi-market",
+    category: "Full Stack",
+    capstone: true,
+    challenges: "Building a trust-based marketplace in a digital-first environment while ensuring accessibility for all users.",
+    outcomes: "Created a scalable platform that empowers local artisans with AI-driven tools for better market reach."
+  },
+  {
+    id: "ats-cv-gen",
+    title: "ATS-FREE CV Generator",
+    description: "Smart resume generation system that creates customized, ATS-friendly resumes based on user inputs. Delivers recruiter-ready documents with clean structure and optimized layouts.",
+    techStack: ["React", "Node.js", "PDF Generation", "AI Parsing"],
+    imageUrl: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800",
+    demoUrl: "https://cvgeneration-rho.vercel.app/",
+    repoUrl: "https://github.com/durksie/ATS-FREE-CV-GENERATOR-APP",
+    category: "Full Stack",
+    featured: true
+  },
+  {
+    id: "sentimentsphere",
+    title: "SentimentSphere",
+    description: "Interactive dashboard for multi-class sentiment analysis, helping users understand emotional tone in text data such as reviews and social media posts. Provides confidence insights.",
+    techStack: ["Python", "NLP", "React", "Data Visualization"],
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    demoUrl: "https://sentimentsphere22.vercel.app/",
+    repoUrl: "https://github.com/durksie/SentimentSphere22",
+    category: "AI/ML",
+    featured: true
+  },
+  {
+    id: "zazu-app",
+    title: "Bird Watching Hotspots",
+    description: "A mobile application built in Kotlin that helps users discover popular bird-watching hotspots. Includes location-based features, intuitive navigation, and a smooth user experience.",
+    techStack: ["Kotlin", "Android", "Google Maps", "Firebase"],
+    imageUrl: "https://images.unsplash.com/photo-1552728089-57bdde30ebd1?auto=format&fit=crop&q=80&w=800",
+    repoUrl: "https://github.com/TshegofatsoSebone/ZAZU",
+    category: "Mobile",
+    featured: false
+  },
+  {
+    id: "bias-audit",
+    title: "Bias Audit Report",
+    description: "Performs a fairness and bias audit on income prediction models using statistical validation and mitigation techniques. Highlights ethical AI practices and bias detection.",
+    techStack: ["Python", "Jupyter", "Pandas", "Scikit-learn"],
+    imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
+    repoUrl: "https://github.com/durksie/GENDER-BIAS-AUDIT-REPORT",
+    category: "AI/ML",
+    featured: false
+  }
+];
+
+export const SOCIALS: SocialLink[] = [
+  { platform: "GitHub", url: "https://github.com", icon: "Github" },
+  { platform: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
+  { platform: "Twitter", url: "https://twitter.com", icon: "Twitter" },
+];
