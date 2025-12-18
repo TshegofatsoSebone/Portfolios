@@ -7,7 +7,10 @@ export const PORTFOLIO_DATA = {
   bio: "Software Developer with strong foundations in Java, Kotlin, C#, and full-stack web development, now expanding expertise into Artificial Intelligence and Machine Learning. Completed comprehensive AI/ML certification series on Coursera (IBM, Google, Intel, DeepLearning.AI, Microsoft) covering Generative AI, LLMs, Responsible AI, Prompt Engineering, and cloud AI implementations. Currently interning at Capaciti with hands-on AI project exposure. Seeking roles that leverage both software engineering rigor and applied AI/ML to build intelligent, scalable solutions.",
   location: "Johannesburg, SA",
   email: "paledisebene@gmail.com",
-  profileImage: "/images/profile/tshegofatso.jpg" // Place your profile photo here
+  profileImage: "/images/profile/tshegofatso.jpg",
+  // Document Paths - references /doc/ folder in public
+  cvPath: "/doc/tshegofatso-sebone-cv-2025.pdf",
+  certBundlePath: "/doc/certificates/all-certifications-bundle.pdf"
 };
 
 export const SKILLS: Skill[] = [
@@ -105,7 +108,8 @@ export const CERTIFICATIONS: Certificate[] = [
     issuer: "DeepLearning.AI",
     date: "Oct 2024",
     category: "Generative AI",
-    imageUrl: "/images/certificates/gen-ai-llm.png"
+    imageUrl: "/images/certificates/gen-ai-llm.png",
+    credentialUrl: "/doc/certificates/gen-ai-llm.pdf" // Example PDF path
   },
   {
     id: "intro-gen-ai",
@@ -113,7 +117,8 @@ export const CERTIFICATIONS: Certificate[] = [
     issuer: "Google Cloud",
     date: "Oct 2024",
     category: "Generative AI",
-    imageUrl: "/images/certificates/intro-gen-ai.png"
+    imageUrl: "/images/certificates/intro-gen-ai.png",
+    credentialUrl: "/doc/certificates/intro-gen-ai.pdf"
   },
 
   // Group 2: AI Foundations & Specializations
@@ -185,6 +190,7 @@ export const PROJECTS: Project[] = [
     title: "Mzansi Market AI",
     description: "AI-driven marketplace supporting South African artisans and local businesses. Integrates AI technologies to address market access, trust issues, and accessibility challenges for users with disabilities.",
     techStack: ["React", "Next.js", "AI Integration", "Tailwind"],
+    imageUrl: "/images/projects/mzansi-market.jpg",
     demoUrl: "https://mzansimarket.vercel.app/",
     repoUrl: "https://github.com/TshegofatsoSebone/Mzansi-market",
     category: "Full Stack",
@@ -197,6 +203,7 @@ export const PROJECTS: Project[] = [
     title: "ATS-FREE CV Generator",
     description: "Smart resume generation system that creates customized, ATS-friendly resumes based on user inputs. Delivers recruiter-ready documents with clean structure and optimized layouts.",
     techStack: ["React", "Node.js", "PDF Generation", "AI Parsing"],
+    imageUrl: "/images/projects/ats-cv-gen.jpg",
     demoUrl: "https://cvgeneration-rho.vercel.app/",
     repoUrl: "https://github.com/durksie/ATS-FREE-CV-GENERATOR-APP",
     category: "Full Stack",
@@ -207,6 +214,7 @@ export const PROJECTS: Project[] = [
     title: "SentimentSphere",
     description: "Interactive dashboard for multi-class sentiment analysis, helping users understand emotional tone in text data such as reviews and social media posts. Provides confidence insights.",
     techStack: ["Python", "NLP", "React", "Data Visualization"],
+    imageUrl: "/images/projects/sentimentsphere.jpg",
     demoUrl: "https://sentimentsphere22.vercel.app/",
     repoUrl: "https://github.com/durksie/SentimentSphere22",
     category: "AI/ML",
@@ -217,6 +225,7 @@ export const PROJECTS: Project[] = [
     title: "Bird Watching Hotspots",
     description: "A mobile application built in Kotlin that helps users discover popular bird-watching hotspots. Includes location-based features, intuitive navigation, and a smooth user experience.",
     techStack: ["Kotlin", "Android", "Google Maps", "Firebase"],
+    imageUrl: "/images/projects/zazu-app.jpg",
     repoUrl: "https://github.com/TshegofatsoSebone/ZAZU",
     category: "Mobile",
     featured: false
@@ -226,6 +235,7 @@ export const PROJECTS: Project[] = [
     title: "Bias Audit Report",
     description: "Performs a fairness and bias audit on income prediction models using statistical validation and mitigation techniques. Highlights ethical AI practices and bias detection.",
     techStack: ["Python", "Jupyter", "Pandas", "Scikit-learn"],
+    imageUrl: "/images/projects/bias-audit.jpg",
     repoUrl: "https://github.com/durksie/GENDER-BIAS-AUDIT-REPORT",
     category: "AI/ML",
     featured: false
@@ -235,4 +245,5 @@ export const PROJECTS: Project[] = [
 export const SOCIALS: SocialLink[] = [
   { platform: "GitHub", url: "https://github.com", icon: "Github" },
   { platform: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
+  { platform: "Twitter", url: "https://twitter.com", icon: "Twitter" },
 ];

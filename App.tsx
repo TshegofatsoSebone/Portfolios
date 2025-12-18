@@ -61,8 +61,6 @@ const App: React.FC = () => {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Check if top of section is near the top of viewport (considering header offset)
-          // or if the section dominates the viewport
           if (rect.top <= 150 && rect.bottom >= 150) {
             setActiveSection(sectionId);
             break;
@@ -88,8 +86,6 @@ const App: React.FC = () => {
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    // Smooth scroll is handled by CSS (scroll-smooth), 
-    // but we manually close menu and set active state for instant feedback
     setActiveSection(id);
     setIsMenuOpen(false);
   };
@@ -142,8 +138,10 @@ const App: React.FC = () => {
                 >
                   {darkMode ? <Sun size={20} /> : <Moon size={20} />}
                 </button>
+                {/* Navbar Resume Download Button */}
                 <a 
-                  href="#" 
+                  href={PORTFOLIO_DATA.cvPath} 
+                  download="Tshegofatso_Sebone_CV.pdf"
                   className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition-all shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/40 flex items-center gap-2"
                 >
                   <Download size={16} /> <span className="hidden xl:inline">Resume</span>
@@ -195,7 +193,8 @@ const App: React.FC = () => {
               </a>
             ))}
              <a 
-                href="#" 
+                href={PORTFOLIO_DATA.cvPath} 
+                download="Tshegofatso_Sebone_CV.pdf"
                 className="block w-full text-center px-4 py-3 mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl flex items-center justify-center gap-2"
               >
                 <Download size={20} /> Download Resume

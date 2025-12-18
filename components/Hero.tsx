@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, User } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, User, Download, FileText } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../constants';
 
 const Hero: React.FC = () => {
@@ -19,6 +19,11 @@ const Hero: React.FC = () => {
         behavior: "smooth"
       });
     }
+  };
+
+  const handleDownloadTrack = () => {
+    console.log("CV Download initiated from Hero");
+    // Analytics tracking could be added here
   };
 
   return (
@@ -64,19 +69,23 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+          {/* Primary Download CV Button */}
+          <a 
+            href={PORTFOLIO_DATA.cvPath} 
+            download="Tshegofatso_Sebone_Software_Developer_CV.pdf"
+            onClick={handleDownloadTrack}
+            className="px-8 py-3.5 bg-indigo-600 text-white rounded-lg font-bold shadow-lg hover:bg-indigo-700 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 group"
+          >
+            <Download size={20} className="group-hover:translate-y-0.5 transition-transform" /> 
+            Download CV
+          </a>
+          
           <a 
             href="#projects" 
             onClick={(e) => scrollToSection(e, 'projects')}
-            className="px-8 py-3.5 bg-indigo-600 text-white rounded-lg font-semibold shadow-lg hover:bg-indigo-700 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+            className="px-8 py-3.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-lg font-semibold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2"
           >
-            View Projects
-          </a>
-          <a 
-            href="#contact" 
-            onClick={(e) => scrollToSection(e, 'contact')}
-            className="px-8 py-3.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-lg font-semibold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
-          >
-            Contact Me
+            <FileText size={20} /> View Projects
           </a>
         </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Send, Loader2, CheckCircle, AlertCircle, Download, FileText, Archive } from 'lucide-react';
 import { PORTFOLIO_DATA, SOCIALS } from '../constants';
 
 const Contact: React.FC = () => {
@@ -82,61 +82,90 @@ const Contact: React.FC = () => {
             Get in <span className="text-indigo-600">Touch</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss modern web technologies? Fill out the form below and I'll get back to you as soon as possible.
+            Have a project in mind or want to discuss modern web technologies? Fill out the form below or download my professional documents.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info Card */}
-          <div className="bg-slate-50 dark:bg-slate-800 p-8 md:p-10 rounded-3xl border border-slate-100 dark:border-slate-700 h-fit">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Contact Information</h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-              I'm open to freelance opportunities, collaboration, or just a friendly chat about technology.
-            </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl text-indigo-600 dark:text-indigo-400">
-                  <Mail size={24} />
+          <div className="space-y-8">
+            <div className="bg-slate-50 dark:bg-slate-800 p-8 md:p-10 rounded-3xl border border-slate-100 dark:border-slate-700 h-fit">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Contact Information</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl text-indigo-600 dark:text-indigo-400">
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Email Me</h4>
+                    <a href={`mailto:${PORTFOLIO_DATA.email}`} className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                      {PORTFOLIO_DATA.email}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Email Me</h4>
-                  <a href={`mailto:${PORTFOLIO_DATA.email}`} className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                    {PORTFOLIO_DATA.email}
-                  </a>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl text-indigo-600 dark:text-indigo-400">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Location</h4>
+                    <p className="text-slate-600 dark:text-slate-400">
+                      {PORTFOLIO_DATA.location}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl text-indigo-600 dark:text-indigo-400">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Location</h4>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    {PORTFOLIO_DATA.location}
-                  </p>
+              <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
+                <h4 className="font-semibold text-slate-900 dark:text-white mb-4">Follow Me</h4>
+                <div className="flex gap-4">
+                  {SOCIALS.map(social => (
+                    <a 
+                      key={social.platform} 
+                      href={social.url} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="p-3 bg-white dark:bg-slate-900 rounded-full text-slate-600 dark:text-slate-400 hover:text-white hover:bg-indigo-600 dark:hover:bg-indigo-500 shadow-sm transition-all hover:scale-110"
+                      aria-label={social.platform}
+                    >
+                      <span className="font-bold text-xs">{social.platform[0]}</span>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-4">Follow Me</h4>
-              <div className="flex gap-4">
-                {SOCIALS.map(social => (
-                  <a 
-                    key={social.platform} 
-                    href={social.url} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="p-3 bg-white dark:bg-slate-900 rounded-full text-slate-600 dark:text-slate-400 hover:text-white hover:bg-indigo-600 dark:hover:bg-indigo-500 shadow-sm transition-all hover:scale-110"
-                    aria-label={social.platform}
-                  >
-                    {/* Simplified icon rendering logic based on name */}
-                    <span className="font-bold text-xs">{social.platform[0]}</span>
-                  </a>
-                ))}
+            {/* NEW: Document Download Section */}
+            <div className="bg-indigo-50 dark:bg-indigo-900/10 p-8 rounded-3xl border border-indigo-100 dark:border-indigo-900/30">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                <FileText className="text-indigo-600" size={24} /> Documents & Resources
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a 
+                  href={PORTFOLIO_DATA.cvPath} 
+                  download="Tshegofatso_Sebone_CV.pdf"
+                  className="flex flex-col p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all group"
+                >
+                  <Download className="text-slate-400 group-hover:text-indigo-600 mb-2 transition-colors" size={20} />
+                  <span className="font-bold text-slate-900 dark:text-white text-sm">Main CV / Resume</span>
+                  <span className="text-[10px] text-slate-400 uppercase font-mono mt-1">PDF Version</span>
+                </a>
+                
+                <a 
+                  href={PORTFOLIO_DATA.certBundlePath} 
+                  download="Tshegofatso_Certifications.pdf"
+                  className="flex flex-col p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all group"
+                >
+                  <Archive className="text-slate-400 group-hover:text-indigo-600 mb-2 transition-colors" size={20} />
+                  <span className="font-bold text-slate-900 dark:text-white text-sm">Certificates Bundle</span>
+                  <span className="text-[10px] text-slate-400 uppercase font-mono mt-1">PDF Portfolio</span>
+                </a>
               </div>
+              <p className="mt-4 text-xs text-slate-500 dark:text-slate-500 italic">
+                Files are hosted in /public/doc/ and available for offline access.
+              </p>
             </div>
           </div>
 
@@ -180,7 +209,6 @@ const Contact: React.FC = () => {
                         focus:outline-none focus:ring-2 transition-all
                       `}
                       aria-invalid={!!errors.name}
-                      aria-describedby={errors.name ? "name-error" : undefined}
                     />
                     {errors.name && (
                       <div className="absolute right-3 top-3.5 text-red-500 pointer-events-none">
@@ -189,7 +217,7 @@ const Contact: React.FC = () => {
                     )}
                   </div>
                   {errors.name && (
-                    <p id="name-error" className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                    <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
                       {errors.name}
                     </p>
                   )}
@@ -263,7 +291,7 @@ const Contact: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 size={20} className="animate-spin" />
-                      Sending...
+                      Preparing Email...
                     </>
                   ) : (
                     <>

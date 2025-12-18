@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Award, CheckCircle, ExternalLink, X, Eye, BookOpen, Brain, ShieldCheck, Code } from 'lucide-react';
+import { Award, CheckCircle, ExternalLink, X, Eye, BookOpen, Brain, ShieldCheck, Code, Download } from 'lucide-react';
 import { CERTIFICATIONS } from '../constants';
 import { Certificate } from '../types';
 
@@ -155,23 +155,31 @@ const Certifications: React.FC = () => {
                 
                 <p className="mt-6 text-sm text-slate-500 dark:text-slate-400 italic flex items-center gap-2">
                    <CheckCircle size={14} className="text-green-500" />
-                   Verified Certification. Official image pending upload.
+                   Verified Certification.
                 </p>
              </div>
 
-             {/* Modal Footer */}
-             {selectedCert.credentialUrl && (
-                <div className="p-6 border-t border-slate-100 dark:border-slate-800 flex justify-end">
-                   <a 
-                      href={selectedCert.credentialUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl flex items-center gap-2 transition-colors shadow-lg shadow-indigo-500/20"
-                   >
-                      Verify on {selectedCert.issuer.split(' ')[0]} <ExternalLink size={16} />
-                   </a>
-                </div>
-             )}
+             {/* Modal Footer - NEW PDF DOWNLOAD */}
+             <div className="p-6 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-3">
+                {selectedCert.credentialUrl && (
+                  <a 
+                    href={selectedCert.credentialUrl}
+                    download={`${selectedCert.title.replace(/\s+/g, '_')}_Certificate.pdf`}
+                    className="px-6 py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium rounded-xl flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    <Download size={16} /> PDF Version
+                  </a>
+                )}
+                {/* External Link if exists, otherwise can point to doc if preferred */}
+                <a 
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl flex items-center gap-2 transition-colors shadow-lg shadow-indigo-500/20"
+                >
+                  Verify Online <ExternalLink size={16} />
+                </a>
+             </div>
           </div>
         </div>
       )}

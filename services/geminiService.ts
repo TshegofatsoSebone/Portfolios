@@ -25,14 +25,10 @@ Keep answers relatively short (under 3 sentences unless asked for detail).
 export const getGeminiChatSession = (): Chat => {
   if (chatSession) return chatSession;
 
-  if (!process.env.API_KEY) {
-      console.warn("API Key not found. Chat will not work.");
-  }
-
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   chatSession = ai.chats.create({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-3-flash-preview',
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
       temperature: 0.7,
