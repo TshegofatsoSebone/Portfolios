@@ -7,7 +7,7 @@ export const PORTFOLIO_DATA = {
   bio: "Software Developer with strong foundations in Java, Kotlin, C#, and full-stack web development, now expanding expertise into Artificial Intelligence and Machine Learning. Completed comprehensive AI/ML certification series on Coursera (IBM, Google, Intel, DeepLearning.AI, Microsoft) covering Generative AI, LLMs, Responsible AI, Prompt Engineering, and cloud AI implementations. Currently interning at Capaciti with hands-on AI project exposure. Seeking roles that leverage both software engineering rigor and applied AI/ML to build intelligent, scalable solutions.",
   location: "Johannesburg, SA",
   email: "paledisebene@gmail.com",
-  profileImage: "./profile.jpg"
+  profileImage: "/images/profile/tshegofatso.jpg" // Place your profile photo here
 };
 
 export const SKILLS: Skill[] = [
@@ -41,7 +41,6 @@ export const SKILLS: Skill[] = [
   { name: ".NET", level: 80, category: "Cloud & Platforms", icon: "devicon-dotnetcore-plain colored" },
   { name: "GitHub", level: 90, category: "Cloud & Platforms", icon: "devicon-github-original" },
   { name: "GitLab", level: 85, category: "Cloud & Platforms", icon: "devicon-gitlab-plain colored" },
-  { name: "Firebase", level: 85, category: "Cloud & Platforms", icon: "devicon-firebase-plain colored" },
 
   // AI/ML
   { name: "TensorFlow", level: 80, category: "AI/ML", icon: "devicon-tensorflow-original colored" },
@@ -105,21 +104,16 @@ export const CERTIFICATIONS: Certificate[] = [
     title: "Generative AI with Large Language Models",
     issuer: "DeepLearning.AI",
     date: "Oct 2024",
-    category: "Generative AI"
-  },
-  {
-    id: "gen-ai-everyone",
-    title: "Generative AI for Everyone",
-    issuer: "AWS & DeepLearning.AI",
-    date: "Oct 2024",
-    category: "Generative AI"
+    category: "Generative AI",
+    imageUrl: "/images/certificates/gen-ai-llm.png"
   },
   {
     id: "intro-gen-ai",
     title: "Introduction to Generative AI",
     issuer: "Google Cloud",
     date: "Oct 2024",
-    category: "Generative AI"
+    category: "Generative AI",
+    imageUrl: "/images/certificates/intro-gen-ai.png"
   },
 
   // Group 2: AI Foundations & Specializations
@@ -128,42 +122,32 @@ export const CERTIFICATIONS: Certificate[] = [
     title: "AI Foundations: Prompt Engineering with ChatGPT",
     issuer: "Arizona State University",
     date: "Oct 2024",
-    category: "Foundations"
+    category: "Foundations",
+    imageUrl: "/images/certificates/ai-prompt-eng.png"
   },
   {
     id: "intro-ai-ibm",
     title: "Introduction to Artificial Intelligence (AI)",
     issuer: "IBM",
     date: "Oct 2024",
-    category: "Foundations"
-  },
-  {
-    id: "ai-essentials-v2",
-    title: "Artificial Intelligence Essentials V2",
-    issuer: "IBM",
-    date: "Oct 2024",
-    category: "Foundations"
+    category: "Foundations",
+    imageUrl: "/images/certificates/intro-ai-ibm.png"
   },
   {
     id: "ai-essentials-intel",
     title: "AI Essentials",
     issuer: "Intel",
     date: "Oct 2024",
-    category: "Foundations"
-  },
-  {
-    id: "ai-everyone-dl",
-    title: "AI for Everyone",
-    issuer: "DeepLearning.AI",
-    date: "Oct 2024",
-    category: "Foundations"
+    category: "Foundations",
+    imageUrl: "/images/certificates/ai-essentials-intel.png"
   },
   {
     id: "ai-azure",
     title: "Artificial Intelligence on Microsoft Azure",
     issuer: "Microsoft",
     date: "Oct 2024",
-    category: "Foundations"
+    category: "Foundations",
+    imageUrl: "/images/certificates/ai-azure.png"
   },
 
   // Group 3: Responsible & Ethical AI
@@ -172,14 +156,8 @@ export const CERTIFICATIONS: Certificate[] = [
     title: "Trustworthy AI: Managing Bias, Ethics, and Accountability",
     issuer: "Johns Hopkins University",
     date: "Oct 2024",
-    category: "Ethics"
-  },
-  {
-    id: "intro-responsible-ai",
-    title: "Introduction to Responsible AI",
-    issuer: "Google",
-    date: "Oct 2024",
-    category: "Ethics"
+    category: "Ethics",
+    imageUrl: "/images/certificates/trustworthy-ai.png"
   },
 
   // Group 4: Development & Implementation
@@ -188,21 +166,16 @@ export const CERTIFICATIONS: Certificate[] = [
     title: "Building AI-Powered Chatbots Without Programming",
     issuer: "IBM",
     date: "Oct 2024",
-    category: "Development"
-  },
-  {
-    id: "python-ds-ai",
-    title: "Python for Data Science and AI",
-    issuer: "IBM",
-    date: "Oct 2024",
-    category: "Development"
+    category: "Development",
+    imageUrl: "/images/certificates/ai-chatbots.png"
   },
   {
     id: "python-dev-ai",
     title: "Python for Data Science, AI & Development",
     issuer: "IBM",
     date: "Oct 2024",
-    category: "Development"
+    category: "Development",
+    imageUrl: "/images/certificates/python-dev-ai.png"
   }
 ];
 
@@ -212,7 +185,7 @@ export const PROJECTS: Project[] = [
     title: "Mzansi Market AI",
     description: "AI-driven marketplace supporting South African artisans and local businesses. Integrates AI technologies to address market access, trust issues, and accessibility challenges for users with disabilities.",
     techStack: ["React", "Next.js", "AI Integration", "Tailwind"],
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/images/projects/mzansi-market.jpg",
     demoUrl: "https://mzansimarket.vercel.app/",
     repoUrl: "https://github.com/TshegofatsoSebone/Mzansi-market",
     category: "Full Stack",
@@ -225,7 +198,7 @@ export const PROJECTS: Project[] = [
     title: "ATS-FREE CV Generator",
     description: "Smart resume generation system that creates customized, ATS-friendly resumes based on user inputs. Delivers recruiter-ready documents with clean structure and optimized layouts.",
     techStack: ["React", "Node.js", "PDF Generation", "AI Parsing"],
-    imageUrl: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/images/projects/ats-cv-gen.jpg",
     demoUrl: "https://cvgeneration-rho.vercel.app/",
     repoUrl: "https://github.com/durksie/ATS-FREE-CV-GENERATOR-APP",
     category: "Full Stack",
@@ -236,7 +209,7 @@ export const PROJECTS: Project[] = [
     title: "SentimentSphere",
     description: "Interactive dashboard for multi-class sentiment analysis, helping users understand emotional tone in text data such as reviews and social media posts. Provides confidence insights.",
     techStack: ["Python", "NLP", "React", "Data Visualization"],
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/images/projects/sentimentsphere.jpg",
     demoUrl: "https://sentimentsphere22.vercel.app/",
     repoUrl: "https://github.com/durksie/SentimentSphere22",
     category: "AI/ML",
@@ -247,7 +220,7 @@ export const PROJECTS: Project[] = [
     title: "Bird Watching Hotspots",
     description: "A mobile application built in Kotlin that helps users discover popular bird-watching hotspots. Includes location-based features, intuitive navigation, and a smooth user experience.",
     techStack: ["Kotlin", "Android", "Google Maps", "Firebase"],
-    imageUrl: "https://images.unsplash.com/photo-1552728089-57bdde30ebd1?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/images/projects/zazu-app.jpg",
     repoUrl: "https://github.com/TshegofatsoSebone/ZAZU",
     category: "Mobile",
     featured: false
@@ -257,7 +230,7 @@ export const PROJECTS: Project[] = [
     title: "Bias Audit Report",
     description: "Performs a fairness and bias audit on income prediction models using statistical validation and mitigation techniques. Highlights ethical AI practices and bias detection.",
     techStack: ["Python", "Jupyter", "Pandas", "Scikit-learn"],
-    imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/images/projects/bias-audit.jpg",
     repoUrl: "https://github.com/durksie/GENDER-BIAS-AUDIT-REPORT",
     category: "AI/ML",
     featured: false

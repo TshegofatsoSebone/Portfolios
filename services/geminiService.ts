@@ -1,5 +1,5 @@
 import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
-import { PORTFOLIO_DATA, PROJECTS, SKILLS, EXPERIENCE, EDUCATION } from "../constants";
+import { PORTFOLIO_DATA, PROJECTS, SKILLS, EXPERIENCE, EDUCATION, CERTIFICATIONS } from "../constants";
 
 let chatSession: Chat | null = null;
 
@@ -15,6 +15,7 @@ Resume Data:
 - Skills: ${SKILLS.map(s => s.name).join(", ")}
 - Experience: ${EXPERIENCE.map(e => `${e.role} at ${e.company} (${e.period})${Array.isArray(e.description) ? ': ' + e.description.join('. ') : ': ' + e.description}`).join("; ")}
 - Education: ${EDUCATION.map(e => `${e.qualification} from ${e.institution} (${e.period})`).join("; ")}
+- Certifications: ${CERTIFICATIONS.map(c => `${c.title} by ${c.issuer} (${c.date})`).join("; ")}
 - Projects: ${PROJECTS.map(p => `${p.title}: ${p.description}`).join("; ")}
 
 Tone: Professional, helpful, slightly enthusiastic but grounded.
@@ -26,7 +27,6 @@ export const getGeminiChatSession = (): Chat => {
 
   if (!process.env.API_KEY) {
       console.warn("API Key not found. Chat will not work.");
-      // In a real app we might handle this gracefully, for now we let the factory fail or return a dummy if needed
   }
 
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });

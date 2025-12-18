@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tshegofatso Sebone | Software Developer | AI/ML Enthusiast</title>
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicon/devicon@v2.16.0/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@v2.16.0/devicon.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -46,6 +46,18 @@
       }
       .dark ::-webkit-scrollbar-thumb {
         background-color: #475569;
+      }
+
+      /* Ensure devicons render sharply */
+      [class^="devicon-"] {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        line-height: 1;
+        text-transform: none;
       }
     </style>
   <script type="importmap">

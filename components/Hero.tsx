@@ -1,8 +1,10 @@
-import React from 'react';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowDown, Github, Linkedin, Mail, User } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../constants';
 
 const Hero: React.FC = () => {
+  const [imgError, setImgError] = useState(false);
+
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -29,14 +31,23 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-6 py-12 text-center z-10">
         
-        {/* Profile Image */}
+        {/* Profile Image - References /images/profile/ */}
         <div className="mb-8 relative inline-block">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto">
-            <img 
-              src={PORTFOLIO_DATA.profileImage} 
-              alt={PORTFOLIO_DATA.name} 
-              className="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-900 shadow-xl"
-            />
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto shadow-2xl">
+            {imgError ? (
+              <div className="w-full h-full rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center border-4 border-white dark:border-slate-900">
+                <User size={48} className="text-slate-400" />
+              </div>
+            ) : (
+              <img 
+                src={PORTFOLIO_DATA.profileImage} 
+                alt={PORTFOLIO_DATA.name} 
+                onError={() => setImgError(true)}
+                className="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-900 shadow-xl"
+              />
+            )}
+            {/* Online Indicator */}
+            <div className="absolute bottom-1 right-1 md:bottom-2 md:right-2 w-5 h-5 bg-green-500 border-4 border-white dark:border-slate-900 rounded-full"></div>
           </div>
         </div>
         

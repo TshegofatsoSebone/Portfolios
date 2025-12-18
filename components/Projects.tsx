@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Zap, Eye, EyeOff, Maximize2, Loader2 } from 'lucide-react';
+import { ExternalLink, Github, Zap, Eye, EyeOff, Maximize2, Loader2, Image as ImageIcon } from 'lucide-react';
 import { PROJECTS } from '../constants';
 import { Project } from '../types';
 
@@ -11,12 +11,12 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, isCapstone }) => {
   const [showPreview, setShowPreview] = useState(false);
   const [iframeLoading, setIframeLoading] = useState(true);
+  const [imgError, setImgError] = useState(false);
 
   const togglePreview = (e: React.MouseEvent) => {
     e.preventDefault();
     if (project.demoUrl) {
       setShowPreview(!showPreview);
-      // Reset loading state when opening
       if (!showPreview) setIframeLoading(true);
     }
   };
@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isCapstone }) => {
       shadow-lg hover:shadow-xl transition-all duration-300 h-full hover:-translate-y-1
     `}>
       
-      {/* Image / Preview Section - Fixed Height for Uniformity */}
+      {/* Image / Preview Section */}
       <div className="relative w-full h-64 overflow-hidden bg-slate-100 dark:bg-slate-800 shrink-0">
         
         {showPreview && project.demoUrl ? (
@@ -58,11 +58,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isCapstone }) => {
           </div>
         ) : (
           <>
-            <img 
-              src={project.imageUrl} 
-              alt={project.title} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
+            {imgError ? (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-400">
+                <ImageIcon size={48} className="mb-2 opacity-20" />
+                <span className="text-xs uppercase tracking-widest font-bold opacity-30">{project.title}</span>
+              </div>
+            ) : (
+              <img 
+                src={project.imageUrl} 
+                alt={project.title} 
+                onError={() => setImgError(true)}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            )}
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
               <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -127,12 +135,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isCapstone }) => {
           </div>
         </div>
         
-        {/* Description with line-clamp for uniformity */}
         <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-1 line-clamp-3">
           {project.description}
         </p>
 
-        {/* Tech Stack - Pushed to bottom */}
         <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800 mt-auto">
           {project.techStack.slice(0, 4).map((tech) => (
             <span key={tech} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md font-medium border border-slate-200 dark:border-slate-700">
@@ -158,11 +164,10 @@ const Projects: React.FC = () => {
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             Explore a collection of my recent work, featuring AI-powered applications, full-stack platforms, and data science research. 
-            Click "Live Preview" to interact with the apps directly.
+            All project images are sourced from <code className="text-indigo-500 font-mono">/images/projects/</code>.
           </p>
         </div>
 
-        {/* Grid Layout - Uniform Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {PROJECTS.map(project => (
             <ProjectCard key={project.id} project={project} isCapstone={project.capstone} />
