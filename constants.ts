@@ -185,7 +185,6 @@ export const PROJECTS: Project[] = [
     title: "Mzansi Market AI",
     description: "AI-driven marketplace supporting South African artisans and local businesses. Integrates AI technologies to address market access, trust issues, and accessibility challenges for users with disabilities.",
     techStack: ["React", "Next.js", "AI Integration", "Tailwind"],
-    imageUrl: "/images/projects/mzansi-market.jpg",
     demoUrl: "https://mzansimarket.vercel.app/",
     repoUrl: "https://github.com/TshegofatsoSebone/Mzansi-market",
     category: "Full Stack",
@@ -198,7 +197,6 @@ export const PROJECTS: Project[] = [
     title: "ATS-FREE CV Generator",
     description: "Smart resume generation system that creates customized, ATS-friendly resumes based on user inputs. Delivers recruiter-ready documents with clean structure and optimized layouts.",
     techStack: ["React", "Node.js", "PDF Generation", "AI Parsing"],
-    imageUrl: "/images/projects/ats-cv-gen.jpg",
     demoUrl: "https://cvgeneration-rho.vercel.app/",
     repoUrl: "https://github.com/durksie/ATS-FREE-CV-GENERATOR-APP",
     category: "Full Stack",
@@ -209,7 +207,6 @@ export const PROJECTS: Project[] = [
     title: "SentimentSphere",
     description: "Interactive dashboard for multi-class sentiment analysis, helping users understand emotional tone in text data such as reviews and social media posts. Provides confidence insights.",
     techStack: ["Python", "NLP", "React", "Data Visualization"],
-    imageUrl: "/images/projects/sentimentsphere.jpg",
     demoUrl: "https://sentimentsphere22.vercel.app/",
     repoUrl: "https://github.com/durksie/SentimentSphere22",
     category: "AI/ML",
@@ -220,7 +217,6 @@ export const PROJECTS: Project[] = [
     title: "Bird Watching Hotspots",
     description: "A mobile application built in Kotlin that helps users discover popular bird-watching hotspots. Includes location-based features, intuitive navigation, and a smooth user experience.",
     techStack: ["Kotlin", "Android", "Google Maps", "Firebase"],
-    imageUrl: "/images/projects/zazu-app.jpg",
     repoUrl: "https://github.com/TshegofatsoSebone/ZAZU",
     category: "Mobile",
     featured: false
@@ -230,7 +226,6 @@ export const PROJECTS: Project[] = [
     title: "Bias Audit Report",
     description: "Performs a fairness and bias audit on income prediction models using statistical validation and mitigation techniques. Highlights ethical AI practices and bias detection.",
     techStack: ["Python", "Jupyter", "Pandas", "Scikit-learn"],
-    imageUrl: "/images/projects/bias-audit.jpg",
     repoUrl: "https://github.com/durksie/GENDER-BIAS-AUDIT-REPORT",
     category: "AI/ML",
     featured: false
@@ -240,5 +235,4 @@ export const PROJECTS: Project[] = [
 export const SOCIALS: SocialLink[] = [
   { platform: "GitHub", url: "https://github.com", icon: "Github" },
   { platform: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
-  { platform: "Twitter", url: "https://twitter.com", icon: "Twitter" },
 ];
